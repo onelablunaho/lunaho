@@ -18,7 +18,7 @@
                 {2, "thirty"},
                 {3, "forty"}
             };
-            _scoreResult = CalculatorScore();
+            _scoreResult = Score();
         }
 
         public string ScoreResult
@@ -33,16 +33,16 @@
         public void AddFirstPlayerScore()
         {
             _firstPlayerScore++;
-            _scoreResult = CalculatorScore();
+            _scoreResult = Score();
         }
 
         public void AddSecondPlayerScore()
         {
             _secondPlayerScore++;
-            _scoreResult = CalculatorScore();
+            _scoreResult = Score();
         }
 
-        private string CalculatorScore()
+        private string Score()
         {
             if (!_scoreMap.TryGetValue(_firstPlayerScore, out var firstPlayerScore))
             {
