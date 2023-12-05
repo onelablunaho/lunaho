@@ -4,7 +4,7 @@
     {
         private string _firstPlayerName;
         private string _secondPlayerName;
-        private string _score;
+        private string _scoreResult;
         private Dictionary<int, string> _scoreMap;
 
         public TennisGame(string firstPlayerName, string secondPlayerName)
@@ -18,12 +18,12 @@
                 {2, "thirty"},
                 {3, "forty"}
             };
-            _score = CalculatorScore();
+            _scoreResult = CalculatorScore();
         }
 
-        public string Score
+        public string ScoreResult
         {
-            get => _score;
+            get => _scoreResult;
         }
 
         private int _firstPlayerScore;
@@ -33,13 +33,13 @@
         public void AddFirstPlayerScore()
         {
             _firstPlayerScore++;
-            _score = CalculatorScore();
+            _scoreResult = CalculatorScore();
         }
 
         public void AddSecondPlayerScore()
         {
             _secondPlayerScore++;
-            _score = CalculatorScore();
+            _scoreResult = CalculatorScore();
         }
 
         private string CalculatorScore()

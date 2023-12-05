@@ -22,7 +22,7 @@ namespace OneBackTests
         [Test]
         public void score_is_love_all()
         {
-            Assert.That(_tennisGame.Score, Is.EqualTo("love all"));
+            Assert.That(_tennisGame.ScoreResult, Is.EqualTo("love all"));
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace OneBackTests
         {
             AddFirstPlayerScore(1);
             AddSecondPlayerScore(1);
-            Assert.That(_tennisGame.Score, Is.EqualTo("fifteen all"));
+            Assert.That(_tennisGame.ScoreResult, Is.EqualTo("fifteen all"));
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace OneBackTests
         {
             AddFirstPlayerScore(2);
             AddSecondPlayerScore(2);
-            Assert.That(_tennisGame.Score, Is.EqualTo("thirty all"));
+            Assert.That(_tennisGame.ScoreResult, Is.EqualTo("thirty all"));
         }
 
         public void AddFirstPlayerScore(int count)
