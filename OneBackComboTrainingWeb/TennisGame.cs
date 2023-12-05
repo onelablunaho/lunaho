@@ -64,7 +64,7 @@
                 return "deuce";
             }
 
-            if (_firstPlayerScore < 3 && _secondPlayerScore < 3)
+            if (_firstPlayerScore <= 3 && _secondPlayerScore <= 3)
             {
                 return $"{firstPlayerScore} {secondPlayerScore}";
             }
