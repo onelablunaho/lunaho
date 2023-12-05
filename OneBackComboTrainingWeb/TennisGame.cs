@@ -4,26 +4,19 @@
     {
         private string _firstPlayerName;
         private string _secondPlayerName;
-        private string _scoreResult;
-        private Dictionary<int, string> _scoreMap;
+        
+        private Dictionary<int, string> _scoreMap = new Dictionary<int, string>
+        {
+            {0, "love"},
+            {1, "fifteen"},
+            {2, "thirty"},
+            {3, "forty"}
+        };
 
         public TennisGame(string firstPlayerName, string secondPlayerName)
         {
             _secondPlayerName = secondPlayerName;
             _firstPlayerName = firstPlayerName;
-            _scoreMap = new Dictionary<int, string>
-            {
-                {0, "love"},
-                {1, "fifteen"},
-                {2, "thirty"},
-                {3, "forty"}
-            };
-            _scoreResult = Score();
-        }
-
-        public string ScoreResult
-        {
-            get => _scoreResult;
         }
 
         private int _firstPlayerScore;
@@ -33,32 +26,20 @@
         public void AddFirstPlayerScore()
         {
             _firstPlayerScore++;
-            _scoreResult = Score();
         }
 
         public void AddSecondPlayerScore()
         {
             _secondPlayerScore++;
-            _scoreResult = Score();
         }
 
         private string Score()
         {
-            if (!_scoreMap.TryGetValue(_firstPlayerScore, out var firstPlayerScore))
-            {
-                //>=4
-            }
-
-            if (!_scoreMap.TryGetValue(_secondPlayerScore, out var secondPlayerScore))
-            {
-                //>=4
-            }
-
             if (_firstPlayerScore == _secondPlayerScore)
             {
                 if (_firstPlayerScore < 3)
                 {
-                    return $"{firstPlayerScore} all";
+                    return $"{_scoreMap[_firstPlayerScore]} all";
                 }
 
                 return "deuce";
@@ -66,7 +47,7 @@
 
             if (_firstPlayerScore <= 3 && _secondPlayerScore <= 3)
             {
-                return $"{firstPlayerScore} {secondPlayerScore}";
+                return $"{_scoreMap[_firstPlayerScore]} {_scoreMap[_secondPlayerScore]}";
             }
 
             if (Math.Abs(_firstPlayerScore-_secondPlayerScore) >= 2)
