@@ -5,7 +5,7 @@
         private string _firstPlayerName;
         private string _secondPlayerName;
         
-        private Dictionary<int, string> _scoreMap = new Dictionary<int, string>
+        private readonly Dictionary<int, string> _scoreMap = new Dictionary<int, string>
         {
             {0, "love"},
             {1, "fifteen"},
